@@ -34,6 +34,7 @@
             this.exitbut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.OpenButt = new System.Windows.Forms.Button();
             this.titlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -119,8 +120,22 @@
             this.pictureBox1.Location = new System.Drawing.Point(12, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1026, 540);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // OpenButt
+            // 
+            this.OpenButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenButt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.OpenButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.OpenButt.Location = new System.Drawing.Point(447, 307);
+            this.OpenButt.Name = "OpenButt";
+            this.OpenButt.Size = new System.Drawing.Size(85, 36);
+            this.OpenButt.TabIndex = 3;
+            this.OpenButt.Text = "Open";
+            this.OpenButt.UseVisualStyleBackColor = true;
+            this.OpenButt.Click += new System.EventHandler(this.OpenButt_Click);
             // 
             // Form1
             // 
@@ -128,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(172)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1050, 583);
+            this.Controls.Add(this.OpenButt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.titlebar);
             this.Controls.Add(this.pictureBox1);
@@ -151,5 +167,6 @@
         private Label label1;
         private Button Settingsbut;
         private PictureBox pictureBox1;
+        private Button OpenButt;
     }
 }

@@ -76,5 +76,22 @@ namespace Pookie_Photos
         {
 
         }
+
+        private void OpenButt_Click(object sender, EventArgs e)
+        {
+           OpenFileDialog ofd = new OpenFileDialog();
+           ofd.ShowDialog();
+            try
+            {
+                pictureBox1.Image = Image.FromFile(Convert.ToString(ofd.FileName));
+                label1.Visible = false;
+                OpenButt.Visible = false;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
