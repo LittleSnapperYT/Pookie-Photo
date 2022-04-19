@@ -20,6 +20,9 @@ namespace Pookie_Photos
             this.FormBorderStyle = FormBorderStyle.None;
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.AllowDrop = true;
+            this.DragEnter += new DragEventHandler(Form1_DragEnter);
+            this.DragDrop += new DragEventHandler(Form1_DragDrop);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -92,6 +95,19 @@ namespace Pookie_Photos
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        void Form1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files) pictureBox1.Image = Image.FromFile(file);
+            OpenButt.Visible = false;
+            label1.Visible=false;
         }
     }
 }
