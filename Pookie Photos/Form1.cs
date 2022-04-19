@@ -27,6 +27,11 @@ namespace Pookie_Photos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string[] arguments = Environment.GetCommandLineArgs();
+            if (arguments.Count() == 2)
+                pictureBox1.Image = Image.FromFile(arguments[1]);
+                OpenButt.Visible = false;
+                label1.Visible = false;
             label1.Text = "Welcome to Pookie Photos, " + Environment.UserName;
         }
 
