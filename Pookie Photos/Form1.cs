@@ -31,7 +31,7 @@ namespace Pookie_Photos
             if (arguments.Count() == 2)
                 pictureBox1.Image = Image.FromFile(arguments[1]);
                 OpenButt.Visible = false;
-                label1.Visible = false;
+            label1.Visible = false;
             label1.Text = "Welcome to Pookie Photos, " + Environment.UserName;
         }
 
